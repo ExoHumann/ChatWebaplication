@@ -5,17 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84d82f0e-9666-4c30-9a24-b9916b363681" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/App.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assert/chat.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Nav.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/Dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/Onboarding.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pyserver/abc/Lib/site-packages/Flask-2.0.3.dist-info/INSTALLER" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pyserver/abc/Lib/site-packages/Flask-2.0.3.dist-info/LICENSE.rst" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pyserver/abc/Lib/site-packages/Flask-2.0.3.dist-info/METADATA" afterDir="false" />
@@ -908,16 +897,7 @@
       <change afterPath="$PROJECT_DIR$/pyserver/abc/Scripts/python.exe" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pyserver/abc/Scripts/pythonw.exe" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pyserver/abc/pyvenv.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Contacts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Conversations.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Dashboard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Home.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Sidebar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -962,7 +942,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1647268703874</updated>
-      <workItem from="1647268705587" duration="1240000" />
+      <workItem from="1647268705587" duration="1926000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1647268967123</created>
@@ -971,7 +951,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647268967123</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="client changes">
+      <created>1647270337187</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1647270337187</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -990,6 +977,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="client changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="client changes" />
   </component>
 </project>
