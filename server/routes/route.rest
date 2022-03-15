@@ -1,4 +1,25 @@
 GET http://localhost:3000/users
 
 ###
-GET http://localhost:3000/users/15
+GET http://localhost:3000/users/6230cbcb7c14a4999133ebbb
+
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "user_id": "12223",
+    "email": "Kisiel@gmail.com",
+    "hashed_password":"lol123",
+    "user_name":"Kisiel"
+}
+
+###
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "email": "Kisiel@gmail.com",
+    "hashed_password":"lol123"
+}
