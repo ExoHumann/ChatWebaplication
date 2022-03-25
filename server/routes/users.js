@@ -16,13 +16,12 @@ router.get('/', async (req,res) => {
 
 
 // Get one user
-router.get('/:id', getUser, async (req,res) => {
-   res.json(res.user)
+router.get('/id', getUser, async (req,res) => {
+   res.json(User)
 })
 
-
 // Create one
-router.post('/signup', async (req,res) => {
+router.post('/', async (req,res) => {
     try {
         // Create Salt For Hashing
         const salt = await bcrypt.genSalt()
@@ -48,12 +47,27 @@ router.post('/signup', async (req,res) => {
 })
 
 // Update one
-router.patch('/:id', getUser, (req,res) => {
-    
+router.patch('/:id', getUser, async (req,res) => {
+    if (req.body.username != null) {
+        res.user.username = req.body.userame
+    }
+    if (req.body.number_id != null) {
+        res.user.number_id = req.body.number_id
+    }
+    if (req.body.avatarURL_id != null) {
+        res.user.avatarURL_id = req.body.avatarURL
+    }
+
+    try {
+        const updateUser = await res.user.save()  
+        res.status(200).json(updateUser)
+    } catch (error) {
+        res.status(400).json({message: error.message})
+    }
 })
 
 // Delete one
-router.delete('/id', getUser, async (req,res) => {
+router.delete('/:id', getUser, async (req,res) => {
     try {
         await res.user.remove()
         res.status(204).json({message: 'User deleted'})

@@ -1,17 +1,17 @@
 GET http://localhost:8000/users
 
 ###
-GET http://localhost:8000/users/6230cbcb7c14a4999133ebbb
+GET http://localhost:8000/users/6238aba76377cd115a6e3720
 
 
 ###
-POST http://localhost:8000/users/signup
+POST http://localhost:8000/users/
 Content-Type: application/json
 
 {
     "user_id": "12223223",
     "email": "Kisiel.com",
-    "hashed_password":"lol123",
+    "password":"lol123",
     "user_name":"Kisiel"
 }
 
@@ -21,9 +21,19 @@ Content-Type: application/json
 
 {
     "email": "Kisiel@gmail.com",
-    "hashed_password":"lol123"
+    "password":"lol123"
 }
 
 ###
 
-DELETE http://localhost:8000/users/6230cbcb7c14a4999133ebbb
+PATCH http://localhost:8000/users/6238b8ca28924c330593743f
+Content-Type: application/json
+
+{
+    "user_name": "Kiss"
+}
+
+###
+DELETE http://localhost:8000/users/6238b8ca28924c330593743f
+
+###
