@@ -1,0 +1,254 @@
+/*                   ---------------Contacts------  */
+.ContactsContainer{
+   
+    display: grid;
+    grid-template-rows: 10% 75% 15%;
+    overflow: hidden;
+    background-color: #080420;
+}
+.brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: center;
+}
+      .img {
+        height: 2rem;
+      }
+      h3 {
+        color: white;
+        text-transform: uppercase;
+      }
+    
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: auto;
+      gap: 0.8rem;
+    }
+      .contact {
+        background-color: #ffffff34;
+        min-height: 5rem;
+        cursor: pointer;
+        width: 90%;
+        border-radius: 0.2rem;
+        padding: 0.4rem;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        transition: 0.5s ease-in-out;
+        
+        }
+    .username {
+          
+            color: white;
+          
+        }
+      
+      .selected {
+        background-color: #9a86f3;
+      }
+    
+  
+    .current-user {
+      background-color: #0d0d30;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+     .avatar .img {
+        
+          height: 4rem;
+          max-inline-size: 100%;
+        
+      }
+      .username .h2 {
+        
+          color: white;
+        
+      }
+     
+   
+ 
+      
+
+/*------------- Logout-------------------*/     
+
+
+
+.LogoutButton{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #9a86f3;
+  border: none;
+  cursor: pointer;
+  
+  
+  
+} 
+.LogoutButton .svg{
+    
+        font-size: 2.3rem;
+
+        color: #bd1354;
+      
+} 
+
+/*------------------------ChatContainer*/
+
+.ChatContainer{
+    display: grid;
+    grid-template-rows: 10% 80% 10%;
+    gap: 0.1rem;
+    overflow: hidden;
+    @media screen and (min-width: 720px) and (max-width: 1080px) {
+      grid-template-rows: 15% 70% 15%;
+    }
+}
+ 
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.user-details {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      
+     
+}
+  
+  .avatar .img {
+    
+      height: 3rem;
+  }
+  .username  .h3{
+    
+      color: white;
+
+  }
+  .chat-messages {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: auto;
+  }
+
+ 
+  .message {
+    display: flex;
+    align-items: center;
+  }
+   .message .content {
+      max-width: 40%;
+      overflow-wrap: break-word;
+      padding: 1rem;
+      font-size: 1.1rem;
+      border-radius: 1rem;
+      color: #d1d1d1;
+      @media screen and (min-width: 720px) and (max-width: 1080px) {
+        max-width: 70%;
+      }
+    }
+  
+  .sended {
+    justify-content: flex-end;
+   
+  }
+  .sended .content {
+    background-color: #4f04ff21;
+  }
+  .recieved {
+    justify-content: flex-start;
+    
+    
+  }
+   .recieved .content {
+      background-color: #9900ff20;
+    }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.chat-container-header{
+
+    background-color: rgb( rgb(60, 60, 194));
+    box-shadow: rgba(172, 43, 43, 0.05)0px 6px 24px 0px,
+    rgba(0, 0,0,0.08) 0px 0px 0px 1px;
+    width: 30%;
+    text-align: center;
+    z-index: 1;
+}
+
+.chat-container .chat-container-header{
+
+    background: linear-gradient(45deg),rgb(255, 50, 115);
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-container .option {
+    border: none;
+    background-color: aqua;
+    border-bottom: solid 40px rgb(250, 33, 33);
+    font-size: 20px;
+    margin: 2px;
+    padding: 10px;
+}
+.chat-container .profile,
+.chat-container .log-out-icon{
+
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: rgb(133, 107, 107);
+}
+.img-container{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.img-container img {
+    width: 100%;
+}
+
+
+.chat-display{
+    padding: 20px;
+    height: 60vh;
+    overflow-y: auto;
+}
+.chat-input{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+} */
