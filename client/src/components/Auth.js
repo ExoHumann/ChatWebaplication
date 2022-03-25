@@ -1,10 +1,26 @@
-import React, {useState} from 'react';
+import {useState ,useEffect} from 'react';
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom';
-import Cookies from 'universal-cookie';
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Auth = ({setShowModal, isSignUp}) => {
+
+    const toastOptions = {
+        position: "bottom-left",
+        autoClose: 8000,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "dark",
+      };
+
+     /*  useEffect(() => {
+
+        if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
+            navigate('/dashboard')
+        }
+      },); */
 
     const [email, setEmail] = useState(null)
     const [username, setUsername] = useState(null)
@@ -17,63 +33,76 @@ const Auth = ({setShowModal, isSignUp}) => {
     console.log(email, password, confirmPassword, number, avatarURL, error)
 
     const navigate = useNavigate();
-    const cookies = new Cookies();
 
     const handleclick = () => {
         setShowModal(false)
 
     }
+
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-
+   
         try {
+
             if (isSignUp && (password !== confirmPassword)) {
                 setError('Passwords not match')
                 return
             }
-            console.log('posting', email, password)
-            const URL = 'http://localhost:8000';
+            console.log('posting', username, email, password, number, avatarURL)
 
-            const response = await axios.post(`${URL}/${isSignUp ? 'signup' : 'login'}`, {
+            const URL = 'http://localhost:8000/users';
+           
+
+              const response = await axios.post(`${URL}/${isSignUp ? 'register' : 'Login'}`, {
                 username,
                 email,
                 password,
                 number,
                 avatarURL
-            });
+
+            }).catch(err => console.log('the error response : '+err.response.data.message))
+            
+        
+
+           
+           
             // some code..
-            console.log('posting111', username, email, password, number, avatarURL, response.status)
+            console.log('posting111', username, email, password, number, avatarURL)
 
-            //cookies.set('token', Token);
-            cookies.set('email', email);
-            cookies.set('password', password);
-
-
-
-            if(isSignUp) {
-                cookies.set('username', username);
-                cookies.set('phoneNumber', number);
-                cookies.set('avatarURL', avatarURL);
-                cookies.set('password', password);
-            }
-
-            /* setCookies('Email',response.data.email)
-             setCookies('UserId',response.data.userId)
-             setCookies('AuthToken',response.data.Token)
- */
+          
+ 
 
             const success = response.status === 200
-            console.log(success)
-            if (success) navigate('/dashboard')
-
+            console.log(response.status)
+            console.log(response.data.JSON)
+           
+            
+           
+            if (success === false) {
+                toast.error(response.msg, toastOptions);
+                console.log(response.msg)
+              }
+            if(success ){
+                localStorage.setItem(
+                    process.env.REACT_APP_LOCALHOST_KEY,
+                    JSON.stringify(response.data)
+                  );
+               
+                 navigate('/dashboard')
+    
+            }
+           
 
         } catch (error) {
             console.log(error)
         }
+
+    
     }
 
     return (
+        
         <div className="auth-modal">
             <div className="close-icon" onClick={handleclick}>X</div>
             <h2>{isSignUp ? 'CREATE ACCOUNT' : 'LOG IN'}</h2>
@@ -107,7 +136,7 @@ const Auth = ({setShowModal, isSignUp}) => {
                     onChange={(event => setPassword(event.target.value))}
                 />
                 {isSignUp && <input
-                    type="confirmpassword"
+                    type="password"
                     id="confirmpassword"
                     name="confirm password"
                     placeholder="Confirm Password"

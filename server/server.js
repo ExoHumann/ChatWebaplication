@@ -69,25 +69,28 @@ app.post('/signup', async (require, response) => {
 
 })
 
-app.post('/login', async (require, response) => {
+ app.post('/login', async (require, response) => {
 
     const client = new MongoClient(uri)
 
-    const {Email, Password} = require.body
-    console.log(Email + Password)
-
     try {
+        const { email, password} = require.body
         await client.connect()
+        console.log(email +password)
 
         const database = client.db('app-data')
         const users = database.collection('users')
 
-        const  user = await  users.findOne({Email})
-        const result = await database.collection('users').findOne({Email});
-        console.log('Users is funded' + result)
+        const  user = await  users.findOne({email})
+      
+    
+       
+        const  correctPassword = await  bcrypt.compare(password, user.hashed_password)
+        console.log( correctPassword)
 
-        console.log('Users is funded' + user)
-       // const  correctPassword = await  bcrypt.compare(Password, user.hashed_password)
+        if(!correctPassword){
+            return res.json({ msg: "Incorrect Username or Password", status: false });
+        }
 
         if (user && correctPassword) {
 
@@ -95,9 +98,13 @@ app.post('/login', async (require, response) => {
                 expiresIn: 60 * 24,
             })
 
-            response.status(201).json({Token, userId : user , Email})
+            response.status(201).json({Token, userId : user , email})
         }
+       
+        
+       
         response.status(401).send('Invalid Password')
+       
         console.log('Invalid Password')
 
     }catch(error){
@@ -105,8 +112,41 @@ app.post('/login', async (require, response) => {
      }
     
 })
+ 
+app.post('/log', async (req, res, next) => {
+    const client = new MongoClient(uri)
+    await client.connect()
+  
+    const database =  client.db('app-data')
+    const User =  database.collection('users')
 
+    try {
 
+      const { email, password } = req.body;
+      console.log(email +password)
+      const user = await User.findOne({ email });
+      if (!user)
+        return res.json({ msg: "Incorrect Username or Password", status: false });
+      const isPasswordValid = await bcrypt.compare(password, user.hashed_password);
+
+      if (!isPasswordValid)
+        return res.json({ msg: "Incorrect Username or Password", status: false });
+      delete user.password;
+      return res.json({ status: true, user });
+    } catch (ex) {
+      next(ex);
+    }
+  })
+
+ app.get('/logOut',async  = (req, res, next) => {
+    try {
+      if (!req.params.id) return res.json({ msg: "User id is required " });
+      onlineUsers.delete(req.params.id);
+      return res.status(200).send();
+    } catch (ex) {
+      next(ex);
+    }
+  })
 
 app.get('/user', async (req, res) => {
 
@@ -115,6 +155,7 @@ app.get('/user', async (req, res) => {
 
     try {
         await client.connect()
+        
 
         const database = client.db('app-data')
         const users = database.collection('users')

@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "flask": "^0.2.10",
-    "virtualenv": "^0.3.1"
-  }
-}

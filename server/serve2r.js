@@ -2,11 +2,16 @@ const PORT = 8000
 require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 const app = express()
+app.use(cors())
+
 
 app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 
+console.log("hhhhh")
 
 
 // MIDDLEWARE
@@ -30,7 +35,7 @@ db.once('open', () =>
 
 
 // Start listening
-app.listen(8000, () => console.log("Server has started"))
 
+app.listen(PORT, () => console.log('Server has started ' + PORT))
 
 

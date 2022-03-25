@@ -2,35 +2,34 @@ const mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema({
 
-    user_id: {
-        type: String,
-        required: true  
+    username: {
+      type: String,
+      required: true,
+      min: 3,
+      max: 20,
+      unique: true,
     },
-
     email: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
+      unique: true,
+      max: 50,
     },
-
-    hashed_password: {
-        type: String,
-        required: true
+    password: {
+      type: String,
+      required: true,
+      min: 8,
     },
-
-    user_name: {
-        type: String,
-        required: true
+    number :{
+      type : String,
+      required: true,
+      min: 8,
     },
-
-    number_id: {
-        type: Number,
+    avatarURL: {
+      type: String,
+      default: "",
     },
-
-    avatarURL_id:{
-        type: String 
-        // 'https://e7.pngegg.com/pngimages/442/477/png-clipart-computer-icons-user-profile-avatar-profile-heroes-profile.png',
-        //required: true
-    }
-})
+    
+  });
 
 module.exports = mongoose.model('User', userSchema)

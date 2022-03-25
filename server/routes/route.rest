@@ -1,18 +1,20 @@
 GET http://localhost:8000/users
 
 ###
-GET http://localhost:8000/users/6230cbcb7c14a4999133ebbb
+GET http://localhost:8000/users/623b4da33a549673095c14e2
+
+
 
 
 ###
-POST http://localhost:8000/users/signup
+POST http://localhost:8000/users/register
 Content-Type: application/json
 
 {
-    "user_id": "12223223",
-    "email": "Kisiel.com",
-    "hashed_password":"lol123",
-    "user_name":"Kisiel"
+    "user_id": "ere3223",
+    "email": "Kiiejl.com",
+    "hashed_password":"lko23",
+    "user_name":"Kielkl"
 }
 
 ###
@@ -26,4 +28,13 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8000/users/6230cbcb7c14a4999133ebbb
+DELETE http://localhost:8000/users/6230c1c6b9157472cce3c252
+
+
+###
+PATCH http://localhost:8000/users/623b4da33a549673095c14e2
+Content-Type: application/json
+
+{
+    "username": "Yazan"
+}

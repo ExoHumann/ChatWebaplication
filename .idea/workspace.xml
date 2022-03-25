@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84d82f0e-9666-4c30-9a24-b9916b363681" name="Changes" comment="init">
+    <list default="true" id="84d82f0e-9666-4c30-9a24-b9916b363681" name="Changes" comment="init server">
       <change afterPath="$PROJECT_DIR$/pyserver/abc/Lib/site-packages/Flask-2.0.3.dist-info/INSTALLER" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pyserver/abc/Lib/site-packages/Flask-2.0.3.dist-info/LICENSE.rst" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pyserver/abc/Lib/site-packages/Flask-2.0.3.dist-info/METADATA" afterDir="false" />
@@ -927,6 +927,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -942,7 +943,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1647268703874</updated>
-      <workItem from="1647268705587" duration="1926000" />
+      <workItem from="1647268705587" duration="3614000" />
+      <workItem from="1647273482788" duration="1209000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1647268967123</created>
@@ -958,7 +960,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647270337187</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="init server">
+      <created>1647271051608</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1647271051608</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -978,6 +987,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="client changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="client changes" />
+    <MESSAGE value="init server" />
+    <option name="LAST_COMMIT_MESSAGE" value="init server" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
