@@ -1,7 +1,7 @@
 GET http://localhost:8000/users
 
 ###
-GET http://localhost:8000/users/623b4da33a549673095c14e2
+GET http://localhost:8000/users/62431453d31d089942d82f76
 
 
 
@@ -11,10 +11,11 @@ POST http://localhost:8000/users/register
 Content-Type: application/json
 
 {
-    "user_id": "ere3223",
+    "username": "ere3223",
     "email": "Kiiejl@gmail.com",
-    "hashed_password":"lko23",
-    "user_name":"Kielkl"
+    "password":"lko23",
+    "user_name":"Kielkl",
+    "number" : "872634872"
 }
 
 ###
@@ -28,7 +29,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8000/users/6230c1c6b9157472cce3c252
+DELETE http://localhost:8000/users/62431453d31d089942d82f76
 
 
 ###
