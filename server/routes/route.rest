@@ -11,10 +11,10 @@ POST http://localhost:8000/users/register
 Content-Type: application/json
 
 {
-    "username": "ere3223",
-    "email": "Kiiejl@gmail.com",
-    "password":"lko23",
-    "user_name":"Kielkl",
+    "username": "omar",
+    "email": "omar@gmail.com",
+    "password":"lkodf23",
+    "user_name":"omar eb",
     "number" : "872634872"
 }
 
