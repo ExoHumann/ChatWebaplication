@@ -24,7 +24,12 @@ app.use('/users', usersRouter)
 
 
 // CONNECTION TO DATABASE
-mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser:true})
+mongoose.connect(process.env.DATABASE_URL,{
+    useNewUrlParser:true,
+    useUnifiedTopology: true,
+    family: 4,
+
+})
 const db = mongoose.connection
 
 db.on('error', (error) => 
@@ -39,3 +44,12 @@ db.once('open', () =>
 app.listen(PORT, () => console.log('Server has started ' + PORT))
 
 
+/*
+//mongodb+srv://admin:admin@cluster0.s1rui.mongodb.net/users
+
+//mongodb+srv://omar:sudoomar@chatapp.s1rui.mongodb.net/user
+
+
+
+//mongodb+srv://omar:sudoomar@localhost:27017-s089x.mongodb.net/user?retryWrites=true
+*/

@@ -12,7 +12,7 @@ Content-Type: application/json
 
 {
     "user_id": "ere3223",
-    "email": "Kiiejl.com",
+    "email": "Kiiejl@gmail.com",
     "hashed_password":"lko23",
     "user_name":"Kielkl"
 }

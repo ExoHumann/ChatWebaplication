@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import ChatContainer from '../messages/ChatContainer'
 
-import Contacts from "../messages/Contacts";
+
 
 
 
@@ -33,7 +33,7 @@ function Dashboard() {
    <div className="chatdashborad">
      <div  className="container">
 
-     <Contacts />,
+     
      
      <ChatContainer/>
 

@@ -75,7 +75,7 @@ const Auth = ({setShowModal, isSignUp}) => {
 
             const success = response.status === 200
             console.log(response.status)
-            console.log(response.data.JSON)
+            
            
             
            
