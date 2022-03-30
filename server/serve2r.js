@@ -30,13 +30,16 @@ mongoose.connect(process.env.DATABASE_URL,{
     family: 4,
 
 })
+
+
+
+
 const db = mongoose.connection
 
-db.on('error', (error) => 
-         console.error(error))
+db.on('error', (error) => console.error(error))
 
 db.once('open', () =>
-         console.log('Conection to DB Successful'))
+         console.log('Connected to database')
 
 
 // Start listening
