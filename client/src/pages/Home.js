@@ -36,7 +36,7 @@ const  handleClick =() =>{
     <h1 className="title"> Chat app</h1>
 
     <button className='primary-button' onClick={handleClick}>
-        {authToken ? 'SignOut' : 'Creat Account'}
+        {authToken ? 'SignOut' : 'Create Account'}
     </button>
 
       {ShowModal && (<Auth setShowModal={setShowModal}  setIsSignUp={setIsSignUp} isSignUp={isSignUp}/>)}
