@@ -168,6 +168,17 @@ const Auth = ({setShowModal, isSignUp}) => {
                     />
 
                 }
+                <div class="room-control">
+						<label for="room">Room</label>
+						<select name="room" id="room">
+							<option value="Room 1">Room 1</option>
+							<option value="Room 2">Room 2</option>
+							<option value="Room 3">Room 3</option>
+							<option value="Room 4">Room 4</option>
+							<option value="Room 5">Room 5</option>
+							<option value="Room 6">Room 6</option>
+						</select>
+					</div>
 
 
                 <input className="secondary-button" type="submit"/>
