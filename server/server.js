@@ -22,6 +22,53 @@ app.get('/', function (req, res) {
 
 })
 
+io.on('connection', (socket) => {
+  console.log("En ny frontend blev forbundet")
+  //Griber hvad der kommer fra frontend der hedder "userInfo", altså username og room
+  socket.on("userInfo", ({username, room}) =>{
+    console.log(`${username}, ${room}`)
+    //Brugeren skal faktisk være i det room som user har valgt:
+    const user = userJoin(socket.id, username, room)
+    socket.join(user.room)
+    
+    //Du vil gerne emit til en specifik room:
+    socket.broadcast.to(user.room).emit("chat message fra backend", formatMessage("Socket.io", `${username} has joined this chat`))
+    
+    //Velkommen til den nye user:
+    socket.emit("chat message fra backend", formatMessage("Socket.io", `Velkommen ${username}`))
+
+    //Når man gerne vil vise at man disconnecter
+    socket.on("disconnect", () => {//Se hvad beskeden er her, den er "disconnect". Det er for at vise, at man fanger alle disconnect beskeder.
+      const user = userLeave(socket.id)
+      if (user) {
+      io.to(user.room).emit("chat message fra backend", formatMessage("Socket.io", `${username} has left this chat` ))//io.emit skriver ud til alle brugere.
+      //Vi vil også gerne visuelt vise, at der er en der har forladt chatten:
+      io.to(user.room).emit("roomUsers", {
+        room: user.room,
+        users: getRoomUsers(user.room) //Sender opdateret information om hvem der er i dette rum efter én har disconnectet
+      })
+      }
+    })
+  
+    //Send info om hvilke users der er i Room
+    io.to(user.room).emit("roomUsers", {
+      room: user.room,
+      users: getRoomUsers(user.room) //Sender alle users der er i dette rum
+    })
+  })
+  
+  //_______________________________________________________
+  //Selve beskeden 
+  socket.on('chat message fra frontend', (msg) => { 
+    console.log("Hvad end der blev skrevet i frontend, bliver nu grebet af server: " + msg)
+    const user = getCurrentUser(socket.id)
+    io.to(user.room).emit('chat message fra backend', formatMessage(`${user.username}`, msg)) 
+  });
+  
+});
+
+
+
 app.post('/signup', async (require, response) => {
 
     const client = new MongoClient(uri)
