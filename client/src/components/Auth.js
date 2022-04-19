@@ -2,25 +2,8 @@ import {useState ,useEffect} from 'react';
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom';
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const Auth = ({setShowModal, isSignUp}) => {
-
-    const toastOptions = {
-        position: "bottom-left",
-        autoClose: 8000,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "dark",
-      };
-
-     /*  useEffect(() => {
-
-        if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
-            navigate('/dashboard')
-        }
-      },); */
 
     const [email, setEmail] = useState(null)
     const [username, setUsername] = useState(null)
@@ -29,19 +12,117 @@ const Auth = ({setShowModal, isSignUp}) => {
     const [number, setNumber] = useState(null)
     const [avatarURL, setAvatarURL] = useState(null)
     const [error, setError] = useState(null)
+    const [BrowserData, setBrowserData] = useState([]);
+    
+    
 
     console.log(email, password, confirmPassword, number, avatarURL, error)
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
+            console.log("BrowserData" + BrowserData)
+            console.log('Hiiiiiiiiiiiiiii')
+          navigate("/chat");
+          
+        }
+      }, []);
 
     const handleclick = () => {
         setShowModal(false)
 
     }
 
+    // 1
+/* const indexedDB =
+window.indexedDB ||
+window.mozIndexedDB ||
+window.webkitIndexedDB ||
+window.msIndexedDB ||
+window.shimIndexedDB;
+
+if (!indexedDB) {
+console.log("IndexedDB could not be found in this browser.");
+}
+
+// 2
+const request = indexedDB.open("CarsDatabase", 1);
+
+
+
+request.onerror = function (event) {
+    console.error("An error occurred with IndexedDB");
+    console.error(event);
+  };
+  request.onupgradeneeded = function () {
+    //1
+    const db = request.result;
+  
+    //2
+    const store = db.createObjectStore("cars", { keyPath: "id" });
+  
+    //3
+    store.createIndex("cars_colour", ["colour"], { unique: false });
+  
+    // 4
+    store.createIndex("colour_and_make", ["colour", "make"], {
+      unique: false,
+    }); 
+  }; */
+
+  /* 
+    request.onsuccess = function () {
+        
+        console.log("Database opened successfully");
+      
+        const db = request.result;
+      
+        // 1
+        const transaction = db.transaction("cars", "readwrite");
+        //var transaction = db.transaction(["books"], 'readwrite');
+      
+        //2
+        const store = transaction.objectStore("cars");
+        const colourIndex = store.index("cars_colour");
+        const makeModelIndex = store.index("colour_and_make");
+      
+
+
+
+        //3
+        store.put({ id: 1, colour: "Red", make: "Toyota" });
+        store.put({ id: 2, colour: "Red", make: "Kia" });
+        store.put({ id: 3, colour: "Blue", make: "Honda" });
+        store.put({ id: 4, colour: "Silver", make: "Subaru" });
+      
+        //4
+        const idQuery = store.get(4);
+        const colourQuery = colourIndex.getAll(["Red"]);
+        const colourMakeQuery = makeModelIndex.get(["Blue", "Honda"]);
+      
+        // 5
+        idQuery.onsuccess = function () {
+          console.log('idQuery', idQuery.result);
+        };
+        colourQuery.onsuccess = function () {
+          console.log('colourQuery', colourQuery.result);
+        };
+        colourMakeQuery.onsuccess = function () {
+          console.log('colourMakeQuery', colourMakeQuery.result);
+        };
+      
+        // 6
+        transaction.oncomplete = function () {
+          db.close();
+        };
+      }; */
+
     const handleSubmit = async (e) => {
         e.preventDefault()
 
+
+        
    
         try {
 
@@ -61,35 +142,45 @@ const Auth = ({setShowModal, isSignUp}) => {
                 number,
                 avatarURL
 
-            }).catch(err => console.log('the error response : '+err.response.data.message))
+            }).catch(err =>  console.log('the error response : '+err.response.data.message)  +setError(err.response.data.message),)
             
-        
+           
 
-           
-           
             // some code..
             console.log('posting111', username, email, password, number, avatarURL)
-
-          
- 
-
             const success = response.status === 200
             console.log(response.status)
             
-           
-            
-           
             if (success === false) {
-                toast.error(response.msg, toastOptions);
+                
                 console.log(response.msg)
               }
-            if(success ){
-                localStorage.setItem(
+            if(success == true ){
+
+              
+ 
+
+               // setBrowserData(response.data)
+               // console.log("BrowserData" + BrowserData)
+
+               /*   localStorage.setItem(
                     process.env.REACT_APP_LOCALHOST_KEY,
                     JSON.stringify(response.data)
-                  );
+                    
+                  )  */
+                  console.log(response.data.userId)
+
+                  localStorage.setItem(
+                    //response.data.username,
+                    process.env.REACT_APP_LOCALHOST_KEY,
+                    JSON.stringify(response.data )
+                    
+                  ) 
+
+
+                  navigate('/chat')
                
-                 navigate('/dashboard')
+                
     
             }
            
@@ -168,21 +259,16 @@ const Auth = ({setShowModal, isSignUp}) => {
                     />
 
                 }
-                <div class="room-control">
-						<label for="room">Room</label>
-						<select name="room" id="room">
-							<option value="Room 1">Room 1</option>
-							<option value="Room 2">Room 2</option>
-							<option value="Room 3">Room 3</option>
-							<option value="Room 4">Room 4</option>
-							<option value="Room 5">Room 5</option>
-							<option value="Room 6">Room 6</option>
-						</select>
-					</div>
+               
 
 
                 <input className="secondary-button" type="submit"/>
-                <p>{error}</p>
+
+                
+                <div className='error'>
+                <p >{error}</p>
+                </div>
+               
 
 
             </form>

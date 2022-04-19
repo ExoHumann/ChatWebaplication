@@ -9,12 +9,11 @@ const Home= () => {
   const [ShowModal, setShowModal] = useState(false);
   const [isSignUp, setIsSignUp] = useState(true)
 
-/*   useEffect(() => {
-          
+  useEffect(() => {
     if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
-        navigate('/dashboard')
+      navigate("/");
     }
-  },); */
+  }, []);
 
 const authToken =false
 const  handleClick =() =>{
@@ -25,6 +24,7 @@ const  handleClick =() =>{
   return (
 
     <div className="overlay">
+      
     <Nav minimal ={false}
          authToken ={authToken}
          setShowModal={setShowModal}

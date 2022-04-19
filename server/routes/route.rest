@@ -1,9 +1,15 @@
 GET http://localhost:8000/users
 
 ###
-GET http://localhost:8000/users/623b4da33a549673095c14e2
+GET http://localhost:8000/users/getallusers/6252b2e8b0e50113c2d320e3
 
 
+###
+POST  http://localhost:8000/users/setavatar/6252b2e8b0e50113c2d320e3
+
+
+###
+POST http://localhost:8000/messages/getmsg
 
 
 ###
@@ -11,10 +17,11 @@ POST http://localhost:8000/users/register
 Content-Type: application/json
 
 {
-    "username": "eree3223",
-    "email": "Kiiej2l@gmail.com",
+    "username": "e34rsee3223",
+    "email": "Ki2ie3dj2l@gmail.com",
     "password":"lko23",
-    "number": "Kielkl"
+    "number": "Kielkl",
+    "avatarURL":"555"
 }
 
 ###
@@ -28,7 +35,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8000/users/6230c1c6b9157472cce3c252
+DELETE http://localhost:8000/users/6252969f3c0b6ff13cde7234
 
 
 ###

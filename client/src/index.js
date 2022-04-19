@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import './messages/ChatStyle.css'
+import'./components1/style.css'
+import './pages/style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

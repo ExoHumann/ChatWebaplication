@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const user = require('../models/user');
 const secret = 'mysecretsshhh';
 //Get all the users
+
 router.get('/', async (req,res) => {
     try {
         const user = await User.find()
@@ -33,6 +34,25 @@ router.post('/register' , async (req, res, next) => {
 
     const { username, email, password ,number, avatarURL} = req.body;
     console.log(username, email, password)
+
+    const usernameCheck = await User.findOne({ username });
+    if (usernameCheck){
+      res.status(401)
+      .json({
+        message: "Username already used"
+      });
+     
+    }
+    const emailCheck = await User.findOne({ email });
+    if(emailCheck){
+      res.status(401)
+      .json({
+        message: "Email already used"
+      });
+    }
+    
+    
+    
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = await User.create({
@@ -46,10 +66,15 @@ router.post('/register' , async (req, res, next) => {
 
     console.log(email, username, password, number, avatarURL)
     delete user.password;
-    return res.json({ status: true, user });
+    const token=jwt.sign(user.toJSON(),secret,{expiresIn:30});
+
+    
+    return res.json({ status: true,  userId : {_id :user._id , username : user.username  , email :user.email , avatarURL : user.avatarURL, isAvatarImageSet : user.isAvatarImageSet }})
+          
+   
 
   } catch (ex) {
-    next(ex);
+  
   }
 })
 
@@ -82,20 +107,13 @@ router.post('/Login' , async (req, res) => {
               message: 'Incorrect password'
           });
         } else {
-          // Issue token
-          const payload = { email };
-          const token = jwt.sign(payload, secret, {
-            expiresIn: '1h'
-          });
-          res.cookie('token', token, { httpOnly: true })
-            .sendStatus(200);
+          const token=jwt.sign(user.toJSON(),secret,{expiresIn:30});
+        
             if (user && isPasswordValid) {
 
-              const Token = jwt.sign(user, email, {
-                  expiresIn: 60 * 24,
-              })
+            
   
-              response.status(200).json({Token, userId : user , email})
+              res.status(200).json({token, userId : {_id :user._id , username : user.username  , email , avatarURL : user.avatarURL, isAvatarImageSet : user.isAvatarImageSet}})
           }
          
         }
@@ -104,10 +122,61 @@ router.post('/Login' , async (req, res) => {
   })
 
 
+  router.post('/setavatar/:id',getUser, async (req, res)  => {
 
-
-router.get('/logOut',getUser,async  = (req, res, next) => {
     try {
+      console.log("User exilkfjlkdsts");
+    
+      const userId = req.params.id;
+      const avatarURL = req.body.image;
+      const userData = await User.findByIdAndUpdate(
+        userId,
+        {
+          isAvatarImageSet: true,
+          avatarURL,
+        },
+        { new: true }
+      );
+      return res.json({
+        isSet: userData.isAvatarImageSet,
+        image: userData.avatarURL,
+      });
+    } catch (ex) {
+     
+    }
+  })
+
+  router.get('/getallusers/:id',getUser, async (req, res)  => {
+    try {
+      const users = await User.find({ _id: { $ne: req.params.id } }).select([
+        "email",
+        "username",
+        "avatarURL",
+        "_id",
+      ]);
+      console.log(users)
+      return res.json(users);
+
+    } catch (ex) {
+    
+    }
+  })
+
+
+
+router.get('/logOut/:id',getUser,async  = (req, res, next) => {
+    
+  
+  
+  try {
+    if (!req.params.id) return res.json({ msg: "User id is required " });
+    onlineUsers.delete(req.params.id);
+    return res.status(200).send();
+  } catch (ex) {
+    next(ex);
+  }
+  
+  /* try {
      
       
       const userlogout = onlineUsers.delete(user);
@@ -121,11 +190,10 @@ router.get('/logOut',getUser,async  = (req, res, next) => {
       return res.status(200).send();
     } catch (ex) {
       next(ex);
-    }
+    } */
   })
 
-
-
+  
 
 // Create one
 router.post('/signup', async (req,res) => {
@@ -177,7 +245,7 @@ router.patch('/:id', getUser, async (req,res) => {
 })
 
 // Delete one
-router.delete('/:id', getUser, async (req,res) => {
+router.delete('/delete/:id', getUser, async (req,res) => {
     try {
         await res.user.remove()
         res.status(204).json({message: 'User deleted'})
@@ -201,5 +269,8 @@ async function getUser(req, res, next) {
     res.user = user
     next()
 }
+
+
+
 
 module.exports = router

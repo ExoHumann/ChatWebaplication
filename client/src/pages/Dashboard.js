@@ -1,37 +1,39 @@
 import React, { useEffect, useState, useRef } from "react";
-import ChatContainer from '../messages/ChatContainer'
 
-
-
+import io from 'socket.io-client'
 
 
 function Dashboard() {
   
-  
-  /* useEffect(async () => {
-    if (!localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
-      navigate("/login");
-    } else {
-      setCurrentUser(
-        await JSON.parse(
-          localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
-        )
-      );
-    }
-  }, []); */
 
- 
+
  
   return (
 
+    
 
 <html>
+
+
   <head>
     <title>Socket.IO chat</title>
 
   </head>
   <body>
-      <main class="chatdashborad">
+
+  <div class="room-control">
+						<label for="room">Room</label>
+						<select name="room" id="room">
+							<option value="Room 1">Room 1</option>
+							<option value="Room 2">Room 2</option>
+							<option value="Room 3">Room 3</option>
+							<option value="Room 4">Room 4</option>
+							<option value="Room 5">Room 5</option>
+							<option value="Room 6">Room 6</option>
+						</select>
+					</div>
+
+      <main class="chatdashboradd">
     <div class="chat-sidebar">
         <h3><i class="fas fa-comments"></i> Room Name:</h3>
         <h2 id="room-name">Room</h2>

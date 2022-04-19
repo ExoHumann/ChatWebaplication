@@ -13,6 +13,7 @@ const Nav = ({ninimal,authToken, setShowModal,showModal, setIsSignUp}) => {
   return (
 
      <nav>
+         
          <div className="logo-container">
              <img className="logo" src={ninimal ?image1 :image2 }/>
 
