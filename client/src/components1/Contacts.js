@@ -53,7 +53,7 @@ import SetAvatar from "./SetAvatar";
 
         <div className="contacts-container">
           <div className="brand">
-              <button onClick={ <grupes/>}> create groupe</button>
+              <button className="createGrupes" onClick={ <grupes/>}> create groupe</button>
            
           </div>
           <div className="contacts">

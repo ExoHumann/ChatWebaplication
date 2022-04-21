@@ -139,12 +139,27 @@
     gap: 1rem;
     justify-content: center;
   }
+
+  .createGrupes{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 200px;
+  border-radius: 0.5rem;
+  background-color: #087c69;
+  border: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  cursor:-webkit-zoom-in
+
+  }
   .contacts {
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: auto;
-    gap: 0.2rem;
+    gap: 0.22rem;
     
   }
   
@@ -164,10 +179,10 @@
     min-height: 2rem;
     cursor: pointer;
     width: 90%;
-    border-radius: 0.2rem;
+    border-radius: 0.9rem;
     padding: 0.4rem;
     display: flex;
-    gap: 1rem;
+    gap: 3rem;
     align-items: center;
     transition: 0.5s ease-in-out;
     
@@ -176,7 +191,7 @@
     
   }
   .avatarimg{
-    height: 3rem;
+    height: 2rem;
   }
   .contact-username {
     
@@ -346,6 +361,13 @@
     background-color: #9900ff20;
   }
 
+.timeholder{
+  justify-content: flex-start;
+  background-color: #d906062b;
+  display: flex;
+  align-items: right;
+
+}
 
 /*--------------------set-avatar-container ----------------*/
 

@@ -12,6 +12,7 @@ function ChatContainer({ currentChat, socket }) {
   const [messages, setMessages] = useState([]);
   const scrollRef = useRef();
   const [arrivalMessage, setArrivalMessage] = useState(null);
+  const time =  new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
   
 
   useEffect(async () => {
@@ -23,14 +24,18 @@ function ChatContainer({ currentChat, socket }) {
     const response = await axios.post(recieveMessageRoute, {
       from: data.userId._id,
       to: currentChat._id,
-      
+      messagedate :data.userId._id, 
+
 
     });
     setMessages(response.data);
 
+    console.log(response.data);
+
     
 
   }, [currentChat]);
+
 
   useEffect(() => {
     const getCurrentChat = async () => {
@@ -43,37 +48,65 @@ function ChatContainer({ currentChat, socket }) {
     getCurrentChat();
   }, [currentChat]);
 
+
+
+
+  
+
   const handleSendMsg = async (msg) => {
     const data = await JSON.parse(
       localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
     );
+    
+    //console.log("the time is " + time);time:time
+
+    const msgs = [...messages]; 
+    msgs.push({ fromSelf: true, message: msg, messagedate:time });
+    setMessages(msgs);
+    console.log(msgs);
+
+  
+
     socket.current.emit("send-msg", {
       to: currentChat._id,
       from: data.userId._id,
       msg,
+     
     });
+
+
     await axios.post(sendMessageRoute, {
       from: data.userId._id,
       to: currentChat._id,
       message: msg,
+      time:time,
+      
+
+      
     });
     console.log( currentChat._id)
     
-    const msgs = [...messages]; 
-    msgs.push({ fromSelf: true, message: msg });
-    setMessages(msgs);
+ 
+
   };
 
   useEffect(() => {
+    
     if (socket.current) {
+      //const time =  new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}), messagedate:time
+      
+      
       socket.current.on("msg-recieve", (msg) => {
+        
         setArrivalMessage({ fromSelf: false, message: msg });
+        console.log("arrivalMessage" + arrivalMessage);
       });
     }
   }, []);
 
   useEffect(() => {
-    arrivalMessage && setMessages((prev) => [...prev, arrivalMessage]);
+    arrivalMessage && setMessages((prev) =>
+     [...prev, arrivalMessage]);
   }, [arrivalMessage]);
 
   useEffect(() => {
@@ -158,6 +191,7 @@ navigate("/");
               >
                 <div className="content ">
                   <p>{message.message}</p>
+                  <p className="timeholder">{message.messagedate}</p>
                 </div>
               </div>
             </div>

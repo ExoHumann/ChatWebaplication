@@ -8,7 +8,11 @@ const messageSchema = new mongoose.Schema(
          type: String,
         required: true 
       },
-
+      messagedate: {
+        type:String,
+        require :true
+      
+      }
     },
     
     users: Array,
@@ -17,6 +21,10 @@ const messageSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
+
+   
+      
+
   },
   {
     timestamps: true,

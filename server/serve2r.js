@@ -67,6 +67,7 @@ const io = socket(server, {
   
   io.on("connection", (socket) => {
     global.chatSocket = socket;
+    
 
     
 

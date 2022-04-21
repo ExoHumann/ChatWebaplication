@@ -5,47 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84d82f0e-9666-4c30-9a24-b9916b363681" name="Changes" comment="Login and logout">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/REQUESTED" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/REQUESTED1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/REQUESTED2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/_speedups.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/cli-32.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/cli-64.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/cli.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/console.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/copyright-free-images-750x420.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/denys-nevozhai-D8iZPlX-2fs-unsplash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/flask.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/gui-32.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/gui-64.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/gui.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/jonatan-pie-3l3RwQdHRHg-unsplash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/less.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/more.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/pip.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/pip3.10.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/pip3.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/py.typed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/py1.typed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/py2.typed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/py3.typed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/py4.typed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/py5.typed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/python.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/pythonw.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/source.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/stocksnap-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/t32.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/t64-arm.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/t64.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/ubuntu.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/w32.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/w64-arm.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07_[Changes]/w64.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_08_07__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_04_2022_09_40_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_04_2022_09_40__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components1/ChatContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components1/ChatContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components1/Contacts.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components1/Contacts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components1/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components1/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/messages.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/messages.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/serve2r.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/serve2r.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,6 +74,10 @@
       <workItem from="1648566240742" duration="596000" />
       <workItem from="1649403443249" duration="844000" />
       <workItem from="1649430779583" duration="316000" />
+      <workItem from="1650383200375" duration="323000" />
+      <workItem from="1649403443249" duration="844000" />
+      <workItem from="1649430779583" duration="316000" />
+      <workItem from="1650558961212" duration="740000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1647268967123</created>
@@ -147,19 +118,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/testing_socket.io" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>

@@ -5,7 +5,8 @@ const Messages = require("../models/message");
 
 router.post('/getmsg' , async (req, res) =>  {
     try {
-      const { from, to } = req.body;
+      const { from, to, createdAt } = req.body;
+      
   
       const messages = await Messages.find({
         users: {
@@ -13,14 +14,22 @@ router.post('/getmsg' , async (req, res) =>  {
         },
       }).sort({ updatedAt: 1 });
 
+
+
       
   
       const projectedMessages = messages.map((msg) => {
-        
+
+        console.log(msg.createdAt);
+       // messagedate:msg.messagedate,
         
         return {
           fromSelf: msg.sender.toString() === from,
           message: msg.message.text,
+          messagedate :msg.message.messagedate
+          
+
+         
           
         };
       });
@@ -33,12 +42,18 @@ router.post('/getmsg' , async (req, res) =>  {
 
   router.post('/addmsg' , async (req, res) => {
     try {
-      const { from, to, message } = req.body;
-      
+      const { from, to, message, time } = req.body;
+      //createdtime :msg.createdAt,
+      // messagedate :time
       const data = await Messages.create({
-        message: { text: message },
+        message: { text: message,messagedate:time },
         users: [from, to],
         sender: from,
+       
+        
+
+        
+        
       });
   
       if (data) return res.json({ msg: "Message added successfully." });
