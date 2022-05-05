@@ -2,25 +2,8 @@ import {useState ,useEffect} from 'react';
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom';
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const Auth = ({setShowModal, isSignUp}) => {
-
-    const toastOptions = {
-        position: "bottom-left",
-        autoClose: 8000,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "dark",
-      };
-
-     /*  useEffect(() => {
-
-        if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
-            navigate('/dashboard')
-        }
-      },); */
 
     const [email, setEmail] = useState(null)
     const [username, setUsername] = useState(null)
@@ -29,21 +12,43 @@ const Auth = ({setShowModal, isSignUp}) => {
     const [number, setNumber] = useState(null)
     const [avatarURL, setAvatarURL] = useState(null)
     const [error, setError] = useState(null)
+    const [BrowserData, setBrowserData] = useState([]);
+    
+    
 
     console.log(email, password, confirmPassword, number, avatarURL, error)
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
+            console.log("BrowserData" + BrowserData)
+            console.log('Hiiiiiiiiiiiiiii')
+          navigate("/chat");
+          
+        }
+      }, []);
 
     const handleclick = () => {
         setShowModal(false)
 
     }
 
+   
+
     const handleSubmit = async (e) => {
         e.preventDefault()
 
+
+       
    
         try {
+
+          const config = {
+            headers: {
+              "Content-type": "application/json",
+            },
+          };
 
             if (isSignUp && (password !== confirmPassword)) {
                 setError('Passwords not match')
@@ -59,37 +64,47 @@ const Auth = ({setShowModal, isSignUp}) => {
                 email,
                 password,
                 number,
-                avatarURL
-
-            }).catch(err => console.log('the error response : '+err.response.data.message))
+                avatarURL}
+                ,config)
+                .catch(err =>  console.log('the error response : '+err.response.data.message)  +setError(err.response.data.message),)
             
-        
+           
 
-           
-           
             // some code..
             console.log('posting111', username, email, password, number, avatarURL)
-
-          
- 
-
             const success = response.status === 200
             console.log(response.status)
             
-           
-            
-           
             if (success === false) {
-                toast.error(response.msg, toastOptions);
+                
                 console.log(response.msg)
               }
-            if(success ){
-                localStorage.setItem(
+            if(success == true ){
+
+              
+ 
+
+               // setBrowserData(response.data)
+               // console.log("BrowserData" + BrowserData)
+
+               /*   localStorage.setItem(
                     process.env.REACT_APP_LOCALHOST_KEY,
                     JSON.stringify(response.data)
-                  );
+                    
+                  )  */
+                  console.log(response.data.userId)
+
+                  localStorage.setItem(
+                    //response.data.username,
+                    process.env.REACT_APP_LOCALHOST_KEY,
+                    JSON.stringify(response.data )
+                    
+                  ) 
+
+
+                  navigate('/chat')
                
-                 navigate('/dashboard')
+                
     
             }
            
@@ -168,21 +183,16 @@ const Auth = ({setShowModal, isSignUp}) => {
                     />
 
                 }
-                <div class="room-control">
-						<label for="room">Room</label>
-						<select name="room" id="room">
-							<option value="Room 1">Room 1</option>
-							<option value="Room 2">Room 2</option>
-							<option value="Room 3">Room 3</option>
-							<option value="Room 4">Room 4</option>
-							<option value="Room 5">Room 5</option>
-							<option value="Room 6">Room 6</option>
-						</select>
-					</div>
+               
 
 
                 <input className="secondary-button" type="submit"/>
-                <p>{error}</p>
+
+                
+                <div className='error'>
+                <p >{error}</p>
+                </div>
+               
 
 
             </form>

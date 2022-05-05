@@ -25,6 +25,7 @@ socket.on('chat message fra backend', function(msg) {
   console.log(msg)
 
   var item = document.createElement('li');
+  
   item.classList.add("message")
   item.innerHTML = `<p class="meta">${msg.username} <span>${msg.date}</span>, <span>${msg.time}</span></p>
   <p class="text">
