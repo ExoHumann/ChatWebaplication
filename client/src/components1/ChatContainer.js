@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 import { sendMessageRoute, recieveMessageRoute, deleteAccountRoute, logoutRoute , getUserByIDRoute} from "../utils/APIRoutes";
 
-function ChatContainer({ currentChat, socket }) {
+const ChatContainer =({ currentChat, socket }) => {
   
   const [messages, setMessages] = useState([]);
   const scrollRef = useRef();
@@ -29,17 +29,8 @@ function ChatContainer({ currentChat, socket }) {
       username :data.userId._id,
 
     });
- 
-    
-  
 
     setMessages(response.data);
-
-    
-
-
-    console.log(response.data);
-
     
 
   }, [currentChat]);
@@ -57,16 +48,11 @@ function ChatContainer({ currentChat, socket }) {
   }, [currentChat]);
 
 
-
-
-  
-
   const handleSendMsg = async (msg) => {
     const data = await JSON.parse(
       localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
     );
     
-    //console.log("the time is " + time);time:time
 
     const msgs = [...messages]; 
     msgs.push({ fromSelf: true, message: msg, messagedate:time, username :data.userId.username });
@@ -126,11 +112,6 @@ function ChatContainer({ currentChat, socket }) {
   const navigate = useNavigate();
 
   
-  
-
- 
-  
-
   const handledeleteAcc = async () => { 
 
    
@@ -159,9 +140,6 @@ localStorage.clear();
  navigate("/chat");
 }
        }
-
-
-
 
 
 

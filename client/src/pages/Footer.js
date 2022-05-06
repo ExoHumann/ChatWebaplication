@@ -1,7 +1,7 @@
 import React from 'react'
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 
-function Footer() {
+const Footer = () => {
     return (
         <div style={{
             height: '80px', display: 'flex',

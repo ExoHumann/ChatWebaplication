@@ -4,7 +4,7 @@ import { BiPowerOff } from "react-icons/bi";
 
 import axios from "axios";
 import { logoutRoute } from "../utils/APIRoutes";
-function Logout() {
+const Logout = () => {
   const navigate = useNavigate();
   const handleClick = async () => {
     const id = await JSON.parse(

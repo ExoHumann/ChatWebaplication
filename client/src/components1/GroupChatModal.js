@@ -1,27 +1,15 @@
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  Button,
-  useDisclosure,
-  FormControl,
+import {Modal,ModalOverlay,ModalContent,ModalHeader,ModalFooter,ModalBody,ModalCloseButton,Button,useDisclosure,FormControl,
   Input,
   useToast,
   Box,
-  fadeConfig,
 } from "@chakra-ui/react";
+
+
 import axios from "axios";
 import { useEffect, useState } from "react";
-
 import UserBadgeItem from "../userAvatar/UserBadgeItem";
-import UserListItem from "../userAvatar/UserListItem";
 import { useNavigate } from "react-router-dom";
 import { getUsersByNameRoute, host, allUsersRoute } from "../utils/APIRoutes";
-import { Avatar } from "@chakra-ui/avatar";
 import {  Text } from "@chakra-ui/layout";
 
 const GroupChatModal = ({ children }) => {
@@ -49,7 +37,7 @@ const GroupChatModal = ({ children }) => {
 
 
     if (!userInfo) history.push("/");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  
   }, [history]);
   //const {  chats, setChats } = ChatState();
   
@@ -89,14 +77,6 @@ const GroupChatModal = ({ children }) => {
         search :query
       });
       
-    
-      
-       // console.log(searchResult.map((user) => (console.log(user))))
-
-        
-       
-      
-      console.log(data.users);
      
       setLoading(false);
       setSearchResult(data.users);
@@ -255,98 +235,3 @@ const GroupChatModal = ({ children }) => {
 };
 
 export default GroupChatModal;
-
-/*
- {loading ? (
-              // <ChatLoading />
-              <div>Loading...</div>
-            ) : (
-              searchResult
-                ?.slice(0, 4)
-                .map((user) => (
-                  
-                 <UserListItem
-                    key={user._id}
-                    user={user}
-                    handleFunction={() => handleGroup(user)}
-                  /> 
-                ))
-            )}
-*/
-
-
-/*
-{loading ? (
-              // <ChatLoading />
-              <div>Loading...</div>
-            ) : (
-              searchResult
-                ?.slice(0, 10)
-                .map((user) => (
-
-
-                  <div  className="Box">
-
-                      
-
-                   <img
-                   className="set-avatar-avatar-imagee"
-                   name={user.username}
-                   src={`data:image/svg+xml;base64,${user.avatarURL}`}
-                  />-
-
-                  <div className="box2">
-                    <Text>{user.username}</Text>
-                    <Text fontSize="xs">
-                      <b>Email : </b>
-                      {user.email}
-                    </Text>
-                  </div>
-
-                  </div>
-                
-                ))
-            )}
-*/
-
-
-/*
- <div className="Box">
-
-            { searchResult?.slice(0, 10).map((user) =>  {
-              
-             
-              
-
-
-              return (
-                <div  className="contactbox">
-                  
-
-                      
-
-                <img
-                
-                
-                className="set-avatar-avatar-image"
-                name={user.username}
-                src={`data:image/svg+xml;base64,${user.avatarURL}`}
-                onClick={() => handleGroup(user) }
-               />
-
-               <div className="contact-username">
-                 <Text>{user.username}</Text>
-                 <Text fontSize="xs">
-                   <b>Email : </b>
-                   {user.email}
-                   
-                   
-                 </Text>
-               </div>
-
-               </div>
-              );
-            })}
-          </div>
-          
-*/

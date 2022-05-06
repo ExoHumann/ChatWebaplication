@@ -2,10 +2,10 @@ import React, {useState ,useEffect} from 'react'
 import Nav from '../components/Nav'
 import Auth from "../components/Auth";
 import {useNavigate} from 'react-router-dom';
-const Home= () => {
+
+const Home = () => {
+
   const navigate = useNavigate();
-
-
   const [ShowModal, setShowModal] = useState(false);
   const [isSignUp, setIsSignUp] = useState(true)
 

@@ -21,9 +21,8 @@ const Auth = ({setShowModal, isSignUp}) => {
     const navigate = useNavigate();
 
     useEffect(() => {
+
         if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
-            console.log("BrowserData" + BrowserData)
-            console.log('Hiiiiiiiiiiiiiii')
           navigate("/chat");
           
         }
@@ -71,28 +70,14 @@ const Auth = ({setShowModal, isSignUp}) => {
            
 
             // some code..
-            console.log('posting111', username, email, password, number, avatarURL)
+          
             const success = response.status === 200
-            console.log(response.status)
             
             if (success === false) {
                 
                 console.log(response.msg)
               }
             if(success == true ){
-
-              
- 
-
-               // setBrowserData(response.data)
-               // console.log("BrowserData" + BrowserData)
-
-               /*   localStorage.setItem(
-                    process.env.REACT_APP_LOCALHOST_KEY,
-                    JSON.stringify(response.data)
-                    
-                  )  */
-                  console.log(response.data.userId)
 
                   localStorage.setItem(
                     //response.data.username,

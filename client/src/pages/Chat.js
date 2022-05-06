@@ -7,7 +7,7 @@ import ChatContainer from "../components1/ChatContainer";
 import Contacts from "../components1/Contacts";
 import Welcome from "../components1/Welcome";
 
- function Chat() {
+ const Chat = () => {
   const navigate = useNavigate();
   const socket = useRef();
   const [contacts, setContacts] = useState([]);

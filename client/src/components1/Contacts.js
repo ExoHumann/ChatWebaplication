@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import GroupChatModal from "./GroupChatModal";
 import SetAvatar from "./SetAvatar";
 
- function Contacts({ contacts, changeChat }) {
+ const Contacts = ({ contacts, changeChat })  => {
+   
   const navigate = useNavigate();
   const [currentUserName, setCurrentUserName] = useState(undefined);
   const [currentUserImage, setCurrentUserImage] = useState(undefined);

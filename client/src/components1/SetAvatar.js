@@ -7,10 +7,10 @@ import { useNavigate } from "react-router-dom";
 import { setAvatarRoute,getAvatarsRoute } from "../utils/APIRoutes";
 import Avatar from 'avataaars'
 import { allUsersRoute } from "../utils/APIRoutes";
-import Avatarr from '@mui/material/Avatar';
 
 
- function SetAvatar() {
+
+ const SetAvatar =() => {
 
   const api =`https://api.multiavatar.com`;
   const navigate = useNavigate();
@@ -73,29 +73,7 @@ import Avatarr from '@mui/material/Avatar';
     }
   };
 
-  /* useEffect(async () => {
-    const data = [];
-    var toonavatar = require('cartoon-avatar');
-   
 
-    for (let i = 0; i < 8; i++) {
-      var url = toonavatar.generate_avatar({"gender":"male"})
-      console.log(url);
-      data.push(url)
-     
-      
-
-    }
-    console.log(data);
-
-    setAvatars(data);
-    
-   
-    
-
-  }, [])
-
- */
 
  const UpdatePic = async () => { 
   setIsLoading(true) 
@@ -109,12 +87,6 @@ import Avatarr from '@mui/material/Avatar';
     data.push(buffer.toString("base64"))
     }
     
-        
-      
-       
-     
-      console.log(data);
-
       setAvatars(data)
       setIsLoading(false)
 

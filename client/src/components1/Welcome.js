@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Welcome() {
+const Welcome = () => {
 
   const [userName, setUserName] = useState("");
   useEffect(async () => {

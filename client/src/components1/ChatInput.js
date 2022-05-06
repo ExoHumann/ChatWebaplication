@@ -5,7 +5,7 @@ import Picker from "emoji-picker-react";
 
 import { io } from "socket.io-client";
 
- function ChatInput({ handleSendMsg }) {
+ const ChatInput = ({ handleSendMsg }) => {
   const [msg, setMsg] = useState("");
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const handleEmojiPickerhideShow = () => {
@@ -14,6 +14,7 @@ import { io } from "socket.io-client";
 
 
   const filehandle = ()=>{
+    
     const socket = io();
     
     document.getElementById("img-submit").onclick = function () {
