@@ -28,11 +28,11 @@ const GroupChatModal = ({ children }) => {
   useEffect(() => {
     const userInfo = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY));
     setUser(userInfo.userId);
-    console.log(userInfo.userId);
+   
 
     const userInfo1 = JSON.parse(localStorage.getItem("chat-app-current-user"));
    // setUser(userInfo);
-    console.log(userInfo1);
+  
 
 
 

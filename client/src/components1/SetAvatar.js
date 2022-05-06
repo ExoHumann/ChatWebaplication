@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { setAvatarRoute,getAvatarsRoute } from "../utils/APIRoutes";
 import Avatar from 'avataaars'
 import { allUsersRoute } from "../utils/APIRoutes";
+import { v4 as uuidv4 } from "uuid";
 
 
 
@@ -42,7 +43,7 @@ import { allUsersRoute } from "../utils/APIRoutes";
         localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
       );
 
-      console.log("from setavatar  " + user.userId._id )
+     
 
       const { data } = await axios.post(`${setAvatarRoute}/${user.userId._id}`, {
         image: avatars[selectedAvatar],
@@ -57,10 +58,6 @@ import { allUsersRoute } from "../utils/APIRoutes";
         user.userId.isAvatarImageSet = true;
         //setAvatars(user.userId.avatarURL)
         user.userId.avatarURL = data.image;
-
-        console.log(user.userId.avatarURL)
-        console.log("fromfddsfdffdfd" +avatars)
-
         
         localStorage.setItem(
           process.env.REACT_APP_LOCALHOST_KEY,
@@ -100,7 +97,7 @@ import { allUsersRoute } from "../utils/APIRoutes";
      //const data = []
 
      const  data = await axios.get(getAvatarsRoute)
-     console.log(data.data);
+    
     const user = await JSON.parse(
       localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
     );
@@ -142,7 +139,7 @@ import { allUsersRoute } from "../utils/APIRoutes";
                    className="set-avatar-avatar-image"
                     src={`data:image/svg+xml;base64,${avatar}`}
                     alt="avatar"
-                    key={avatar}
+                    key={uuidv4()}
                     onClick={() => setSelectedAvatar(index)}
                   />-
                   

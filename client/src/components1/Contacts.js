@@ -5,7 +5,7 @@ import GroupChatModal from "./GroupChatModal";
 import SetAvatar from "./SetAvatar";
 
  const Contacts = ({ contacts, changeChat })  => {
-   
+
   const navigate = useNavigate();
   const [currentUserName, setCurrentUserName] = useState(undefined);
   const [currentUserImage, setCurrentUserImage] = useState(undefined);
@@ -72,7 +72,7 @@ import SetAvatar from "./SetAvatar";
 
           <div className="contacts">
             {contacts.map((contact, index) => {
-              {console.log("contacts name ssssss" + contact._id)}
+             
               
 
 

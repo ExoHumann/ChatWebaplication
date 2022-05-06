@@ -57,7 +57,7 @@ const ChatContainer =({ currentChat, socket }) => {
     const msgs = [...messages]; 
     msgs.push({ fromSelf: true, message: msg, messagedate:time, username :data.userId.username });
     setMessages(msgs);
-    console.log(msgs);
+    
 
   
 
@@ -79,7 +79,7 @@ const ChatContainer =({ currentChat, socket }) => {
 
       
     });
-    console.log( currentChat._id)
+    
     
  
 
@@ -193,12 +193,10 @@ localStorage.clear();
         <Logout />
 
 
-        <button onClick={handledeleteAcc} type="button" class="btn btn-danger">Delete your Account</button>
-        <button onClick={handleconversation} type="button" class="btn btn-danger">Delete conversation</button>
-
-
-
+        <button onClick={handledeleteAcc} type="button" className="btn btn-danger">Delete your Account</button>
+        
       </div>
+
       <div className="chat-messages">
         {messages.map((message) => {
           return (
@@ -210,9 +208,9 @@ localStorage.clear();
               >
                  <div className="content ">
                
-                  <p>{"UserName : " + message.username}</p>
-                  <p>{"Message  : " +message.message}</p>
-                  <p className="timeholder">{ "Time : " +message.messagedate}</p>
+                  <p>{ message.username}</p>
+                  <p>{message.message}</p>
+                  <p> { "Time : " +message.messagedate}</p>
                   
                 </div>
               </div>

@@ -16,8 +16,7 @@ const Auth = ({setShowModal, isSignUp}) => {
     
     
 
-    console.log(email, password, confirmPassword, number, avatarURL, error)
-
+   
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -53,8 +52,7 @@ const Auth = ({setShowModal, isSignUp}) => {
                 setError('Passwords not match')
                 return
             }
-            console.log('posting', username, email, password, number, avatarURL)
-
+        
             const URL = 'http://localhost:8000/users';
            
 

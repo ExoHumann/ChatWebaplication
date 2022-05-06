@@ -11,7 +11,6 @@ const Logout = () => {
       localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
     ).userId._id;
 
-    console.log(id)
 
     const data = await axios.get(`${logoutRoute}/${id}`);
     
