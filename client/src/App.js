@@ -1,5 +1,5 @@
 
-import Dashboard from './pages/Dashboard';
+
 import Home from './pages/Home';
 import {BrowserRouter, Routes,Route, useNavigate} from 'react-router-dom'
 import Footer from './pages/Footer';
@@ -16,12 +16,9 @@ const App = () => {
      
         <Routes>
           <Route path={'/'} element ={<Home/>}/>
-          <Route path={"/dashboard"} element ={<Dashboard/>}/>
           <Route path={'/chat'} element ={<Chat/>}/>
           <Route path={'/setAvatar'} element ={<Setavatar/>}/>
           
-          
-
         </Routes>
        
        

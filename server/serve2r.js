@@ -71,12 +71,10 @@ const io = socket(server, {
     console.log("Connected to socket.io");
     global.chatSocket = socket;
     
-
-    
-
     socket.on("add-user", (userId) => {
       onlineUsers.set(userId, socket.id);
     });
+
   
     socket.on("send-msg", (data) => {
       const sendUserSocket = onlineUsers.get(data.to);
@@ -85,4 +83,5 @@ const io = socket(server, {
         socket.to(sendUserSocket).emit("msg-recieve", data.msg);
       }
     });
+    
   });

@@ -31,7 +31,6 @@ import Welcome from "../components1/Welcome";
   useEffect(() => {
     if (currentUser) {
      
-
       socket.current = io(host);
       socket.current.emit("add-user", currentUser.userId._id);
     }

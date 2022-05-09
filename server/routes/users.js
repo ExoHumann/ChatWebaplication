@@ -68,7 +68,7 @@ router.post('/register' , async (req, res, next) => {
 
    
     delete user.password;
-    const token=jwt.sign(user.toJSON(),secret,{expiresIn:30});
+   // const token=jwt.sign(user.toJSON(),secret,{expiresIn:30});
 
     
     const payload = { userId : {_id :user._id , username : user.username  , email , avatarURL : user.avatarURL, isAvatarImageSet : user.isAvatarImageSet}};
@@ -169,10 +169,7 @@ router.post('/Login' , async (req, res) => {
   router.post('/setavatar/:id',getUser, async (req, res)  => {
 
     try {
-     
-    
       const userId = req.params.id;
-     
       const avatarURL = req.body.image;
       const userData = await User.findByIdAndUpdate(
         userId,

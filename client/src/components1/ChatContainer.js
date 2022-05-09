@@ -60,7 +60,7 @@ const ChatContainer =({ currentChat, socket }) => {
     
 
   
-
+// send a message to the server
     socket.current.emit("send-msg", {
       to: currentChat._id,
       from: data.userId._id,
@@ -92,9 +92,7 @@ const ChatContainer =({ currentChat, socket }) => {
       
       
       socket.current.on("msg-recieve", (msg) => {
-        
         setArrivalMessage({ fromSelf: false, message: msg });
-        console.log("arrivalMessage" + arrivalMessage);
       });
     }
   }, []);

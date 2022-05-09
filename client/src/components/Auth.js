@@ -1,6 +1,7 @@
 import {useState ,useEffect} from 'react';
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom';
+import {AuthRoute} from "../utils/APIRoutes";
 
 
 const Auth = ({setShowModal, isSignUp}) => {
@@ -12,13 +13,9 @@ const Auth = ({setShowModal, isSignUp}) => {
     const [number, setNumber] = useState(null)
     const [avatarURL, setAvatarURL] = useState(null)
     const [error, setError] = useState(null)
-    const [BrowserData, setBrowserData] = useState([]);
-    
     
 
-   
     const navigate = useNavigate();
-
     useEffect(() => {
 
         if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
@@ -31,15 +28,8 @@ const Auth = ({setShowModal, isSignUp}) => {
         setShowModal(false)
 
     }
-
-   
-
     const handleSubmit = async (e) => {
         e.preventDefault()
-
-
-       
-   
         try {
 
           const config = {
@@ -52,11 +42,7 @@ const Auth = ({setShowModal, isSignUp}) => {
                 setError('Passwords not match')
                 return
             }
-        
-            const URL = 'http://localhost:8000/users';
-           
-
-              const response = await axios.post(`${URL}/${isSignUp ? 'register' : 'Login'}`, {
+              const response = await axios.post(`${AuthRoute}/${isSignUp ? 'register' : 'Login'}`, {
                 username,
                 email,
                 password,
@@ -84,19 +70,13 @@ const Auth = ({setShowModal, isSignUp}) => {
                     
                   ) 
 
-
                   navigate('/chat')
-               
-                
-    
             }
            
-
         } catch (error) {
             console.log(error)
         }
 
-    
     }
 
     return (
@@ -143,6 +123,8 @@ const Auth = ({setShowModal, isSignUp}) => {
                 />}
 
 
+                
+                
                 {isSignUp &&
 
                     <input
@@ -167,8 +149,6 @@ const Auth = ({setShowModal, isSignUp}) => {
 
                 }
                
-
-
                 <input className="secondary-button" type="submit"/>
 
                 

@@ -1,7 +1,7 @@
-GET http://localhost:8000/users
+GET http://localhost:8000/users/getUserByID/62750038531e0df6ebe3144d
 
 ###
-GET http://localhost:8000/users/getallusers/624d5aec740bbe9088a052dc
+GET http://localhost:8000/users/getallusers/62750038531e0df6ebe3144d
 
 
 ###
@@ -21,8 +21,8 @@ POST http://localhost:8000/users/register
 Content-Type: application/json
 
 {
-    "username": "e34rsee3223",
-    "email": "Ki2ie3dj2l@gmail.com",
+    "username": "e3s4rsee3223",
+    "email": "Ki2ie3sdj2l@gmail.com",
     "password":"lko23",
     "number": "Kielkl",
     "avatarURL":"555"
@@ -39,7 +39,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8000/users/6252969f3c0b6ff13cde7234
+DELETE http://localhost:8000/users/delete/627500bd531e0df6ebe31457
 
 
 ###
