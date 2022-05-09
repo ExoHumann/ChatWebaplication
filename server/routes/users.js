@@ -5,7 +5,6 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
 const user = require('../models/user');
 const secret = 'mysecretsshhh';
-const generateToken = require("../config/generateToken");
 //Get all the users
 
 router.get('/', async (req,res) => {
