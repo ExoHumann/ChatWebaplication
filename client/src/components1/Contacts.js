@@ -71,6 +71,7 @@ import SetAvatar from "./SetAvatar";
           </div>
 
           <div className="contacts">
+            
             {contacts.map((contact, index) => {
              
               

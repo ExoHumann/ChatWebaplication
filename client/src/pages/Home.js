@@ -16,8 +16,9 @@ const Home = () => {
   }, []);
 
 const authToken =false
+
 const  handleClick =() =>{
-    console.log('cliched')
+   
   setShowModal(true)
   setIsSignUp(true)
 }

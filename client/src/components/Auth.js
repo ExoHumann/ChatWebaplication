@@ -30,6 +30,7 @@ const Auth = ({setShowModal, isSignUp}) => {
     }
     const handleSubmit = async (e) => {
         e.preventDefault()
+
         try {
 
           const config = {
@@ -67,8 +68,10 @@ const Auth = ({setShowModal, isSignUp}) => {
                     //response.data.username,
                     process.env.REACT_APP_LOCALHOST_KEY,
                     JSON.stringify(response.data )
+
                     
                   ) 
+                  console.log(response.data );
 
                   navigate('/chat')
             }
@@ -85,6 +88,7 @@ const Auth = ({setShowModal, isSignUp}) => {
             <div className="close-icon" onClick={handleclick}>X</div>
             <h2>{isSignUp ? 'CREATE ACCOUNT' : 'LOG IN'}</h2>
             <p> Our Privacy Policy</p>
+            
             <form onSubmit={handleSubmit}>
 
                 {isSignUp &&
